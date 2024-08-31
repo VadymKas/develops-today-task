@@ -36,12 +36,15 @@ This documentation outlines the steps required to complete the test assessment f
    - Define the `generateStaticParams` function to generate static paths for the result pages.
    - Fetch the necessary data to determine the paths to be pre-rendered.
 2. **Fetch Vehicle Data:**
+
    - On the result page, get the vehicle type and model year from the params
    - Use the following endpoint to fetch the vehicle models by make ID and model year:
+
      ```
      <https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear/makeId/{makeId}/modelyear/{year}?format=json>
 
      ```
+
 3. **Render Vehicle Models:**
    - Display the fetched vehicle models using Tailwind CSS for styling.
    - Implement error handling for any data fetching issues.
@@ -76,19 +79,18 @@ This documentation outlines the steps required to complete the test assessment f
 
 ## Getting Started
 
-First, run the development server:
+## Available Scripts
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Before starting the project you need to install all dependencies:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### `npm install .`
+
+In the project directory, you can run:
+
+### `npm run dev`
+
+Runs the app in the development mode.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
