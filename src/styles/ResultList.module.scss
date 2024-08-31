@@ -1,0 +1,15 @@
+.result {
+  @apply min-h-screen flex flex-col items-center;
+
+  &__title {
+    @apply text-4xl text-center mt-8 mb-8;
+  }
+
+  &__list {
+    @apply flex flex-wrap justify-center gap-5 px-12;
+  }
+
+  &__element {
+    @apply w-64 h-32 flex items-center justify-center border rounded font-bold shadow;
+  }
+}

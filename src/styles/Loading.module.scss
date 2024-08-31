@@ -1,0 +1,7 @@
+.loading {
+  @apply min-h-screen flex justify-center items-center;
+
+  &__text {
+    @apply text-2xl font-bold text-blue-600;
+  }
+}
