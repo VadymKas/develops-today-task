@@ -1,5 +1,79 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+# Front-end JS engineer test assessment - the Car Dealer App
+
+### Overview
+
+This documentation outlines the steps required to complete the test assessment for creating a car dealer application using Next.js. The application will allow users to filter vehicles by type and model year, and view the results on a separate page.
+
+## Steps to Complete the Assessment
+
+### 1. Create a Next.js Application
+
+### 2. Create a Filter Page
+
+1. **Design the Filter Page:**
+   - It should be the home page of the app
+   - Use Tailwind CSS to style the page.
+   - You can design and style the components as you want
+2. **Add Vehicle Type and Model Year Selectors:**
+   - Fetch vehicle types using the endpoint:
+     ```
+     <https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json>
+     ```
+   - Populate a dropdown selector with the fetched vehicle types.
+   - Create another dropdown selector for model years ranging from 2015 to the current year.
+3. **Enable the "Next" Button:**
+   - Add a "Next" navigation button that is initially disabled.
+   - Use Link component
+   - Enable the button only when a vehicle type and model year are selected.
+4. **Navigate to the Result Page:**
+   - On clicking the "Next", navigate to the route `result/[makeId]/[year]`.
+
+### 3. Create the Result Page
+
+1. **Implement `generateStaticParams`:**
+   - Define the `generateStaticParams` function to generate static paths for the result pages.
+   - Fetch the necessary data to determine the paths to be pre-rendered.
+2. **Fetch Vehicle Data:**
+   - On the result page, get the vehicle type and model year from the params
+   - Use the following endpoint to fetch the vehicle models by make ID and model year:
+     ```
+     <https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear/makeId/{makeId}/modelyear/{year}?format=json>
+
+     ```
+3. **Render Vehicle Models:**
+   - Display the fetched vehicle models using Tailwind CSS for styling.
+   - Implement error handling for any data fetching issues.
+
+### 4. Implement Suspense Component
+
+- Use React's `Suspense` component to handle loading states where applicable.
+- Consider using `Suspense` for data fetching and component loading.
+
+### 5. Implement UI with Tailwind CSS
+
+- Ensure all components and pages are styled using Tailwind CSS.
+- Follow best practices for responsive design and accessibility.
+
+### 6. Add Configuration and Documentation
+
+1. **Environment Variables:**
+   - Create a `.env.local` file in the root directory to store environment variables. Add it to the repository.
+2. **Setup ESLint and Prettier:**
+   - Add ESLint and Prettier to maintain code quality and consistency.
+   - Configure `.eslintrc.js` and `.prettierrc` files according to project standards.
+3. **Create a README File:**
+   - Include instructions on how to run and build the application.
+   - Provide an overview of the application's features and architecture.
+
+### Additional Resources
+
+- **API Documentation:** [VPIC API Documentation](https://vpic.nhtsa.dot.gov/api/?ref=public_apis)
+- **Next.js Documentation:** [Next.js Docs](https://nextjs.org/docs)
+- **Tailwind CSS Documentation:** [Tailwind CSS Docs](https://tailwindcss.com/docs)
+- **React Suspense Documentation:** [React Suspense](https://react.dev/reference/react/Suspense)
+
 ## Getting Started
 
 First, run the development server:
